@@ -5,7 +5,8 @@ class Year
   end
 
   def leap?
-    divisible_by_4? && !(divisible_by_100? || divisible_by_400?)
+
+    (divisible_by_4? && !divisible_by_100?) || (divisible_by_100? && divisible_by_400?)
 
   end
 
@@ -33,3 +34,5 @@ end
 puts Year.new(1996).leap?
 
 puts 2000.leap_year?
+
+puts 1900.leap_year?
