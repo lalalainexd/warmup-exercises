@@ -1,6 +1,5 @@
 class Year
 
-<<<<<<< HEAD
   attr_reader :year
   def initialize(number)
     @year = number.to_i
@@ -31,7 +30,7 @@ end
   end
 
   def leap?
-    divisible_by_4? && !(divisible_by_100? || divisible_by_400?)
+    (divisible_by_4? && !divisible_by_100?) || (divisible_by_100? && divisible_by_400?)
 
   end
 
@@ -59,3 +58,8 @@ end
 puts Year.new(1996).leap?
 
 puts 2000.leap_year?
+<<<<<<< HEAD
+=======
+
+puts 1900.leap_year?
+>>>>>>> master
