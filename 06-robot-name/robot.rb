@@ -1,21 +1,19 @@
 class Robot
-  attr_accessor :name
-  def initialize
-
-    @name = make_name
+  def name
+    @name ||= RobotNamer.generate
   end
 
 
   def reset
-    self.name = make_name
+    @name = nill
   end
 
-  def make_name
+end
 
-    name = ''
-    2.times {name += ('A'..'Z').to_a.sample}
-    3.times {name += ('0'..'9').to_a.sample}
-    return name
+module RobotNamer
+  def self.generate
+
+    "#{('A'..'Z').to_a.sample(2).join}#{rand(100..999)}"
   end
 end
 
