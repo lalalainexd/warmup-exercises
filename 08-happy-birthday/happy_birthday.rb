@@ -27,7 +27,8 @@ class HappyBirthday
 
   def birthday_passed_this_year? birthday
     today = Date.today
-    birthday.month >= today.month && birthday.day >= today.day
+    #birthday.month >= today.month && birthday.day >= today.day
+    today < britday
 
   end
 
