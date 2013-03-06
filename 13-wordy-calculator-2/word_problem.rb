@@ -10,7 +10,7 @@ class WordProblem
   end
 
   def calculate
-    numbers.inject(operation.to_sym)
+    operation.execute(numbers)
   end
 
   def numbers
@@ -19,11 +19,70 @@ class WordProblem
 
   def operation
     word_op = problem.split[3]
-    Operation.new word_op
+    actions[word_op]
+  end
+
+  def actions
+    hash = { "plus" => MathAction.addition,
+            "minus" => MathAction.subtraction,
+            #"cubed" => PowerAction.cubed }
+            "multiplied" => MathAction.multiplication,
+            "divided" => MathAction.division}
+    hash.default = UnknownAction.new
+
+    return hash
   end
 
   def allowed_numbers
     %r{-?\d+}
+  end
+end
+
+#class PowerAction
+#  attr_reader :pow
+
+#  def initialize(pow)
+#    @pow = pow
+#  end
+
+#  def execute(numbers)
+#    numbers.first.to_i ** pow
+#  end
+#end
+
+class MathAction
+
+  def self.addition
+    new(:+)
+  end
+
+  def self.subtraction
+    new(:-)
+  end
+
+  def self.multiplication
+    new(:*)
+  end
+
+  def self.division
+    new(:/)
+  end
+
+  attr_reader :operation
+
+  def initialize(operation)
+    @operation = operation
+  end
+
+  def execute(numbers)
+    numbers.inject(operation)
+  end
+end
+
+class UnknownAction
+
+  def execute(*params)
+    raise ArgumentError
   end
 end
 
