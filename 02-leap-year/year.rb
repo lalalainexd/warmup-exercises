@@ -1,65 +1,31 @@
 class Year
-
   attr_reader :year
-  def initialize(number)
-    @year = number.to_i
+
+  def initialize year
+    @year = year
+
   end
 
   def leap?
-    by4 && (!by100 || by400)
+     plain_leap_year? || exceptional_century?
   end
 
   private
 
-  def by4
-    (year % 4) == 0
+  def plain_leap_year?
+    divisible_by_four? && not_century?
   end
 
-  def by100
-    (year % 100) == 0
+  def divisible_by_four?
+    year % 4 == 0
   end
 
-  def by400
-    (year % 400) == 0
+  def exceptional_century?
+    year % 400 == 0
+  end
+
+  def not_century?
+    year % 100 != 0
   end
 
 end
-
-  def initialize year
-    @year = year
-  end
-
-  def leap?
-    (divisible_by_4? && !divisible_by_100?) || (divisible_by_100? && divisible_by_400?)
-
-  end
-
-
-  def divisible_by_4?
-    @year % 4 == 0
-  end
-
-  def divisible_by_100?
-    @year % 100 == 0
-  end
-
-  def divisible_by_400?
-    @year % 400 == 0
-  end
-end
-
-
-class Fixnum
-  def leap_year?
-        Year.new(self).leap?
-  end
-end
-
-puts Year.new(1996).leap?
-
-puts 2000.leap_year?
-<<<<<<< HEAD
-=======
-
-puts 1900.leap_year?
->>>>>>> master
