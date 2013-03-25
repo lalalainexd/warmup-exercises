@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative './series'
+require_relative './series2'
 
 class SeriesTest < MiniTest::Unit::TestCase
   def test_digits

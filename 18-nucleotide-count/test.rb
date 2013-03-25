@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative './dna'
+require_relative './dna2'
 
 class DNATest < MiniTest::Unit::TestCase
   def test_empty_dna_string_has_no_adenosine
