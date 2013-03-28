@@ -8,22 +8,18 @@ class SeriesTest < MiniTest::Unit::TestCase
   end
 
   def test_same_digits_reversed
-    skip
     assert_equal (0..9).to_a.reverse, Series.new("9876543210").digits
   end
 
   def test_fewer_digits
-    skip
     assert_equal (4..8).to_a.reverse, Series.new("87654").digits
   end
 
   def test_some_other_digits
-    skip
     assert_equal [9, 3, 6, 9, 2, 3, 4, 6, 8], Series.new("936923468").digits
   end
 
   def test_slices_of_2
-    skip
     series = Series.new("01234")
     expected = [[0, 1], [1, 2], [2, 3], [3, 4]]
     assert_equal expected, series.slices(2)
@@ -36,7 +32,6 @@ class SeriesTest < MiniTest::Unit::TestCase
   end
 
   def test_slices_of_3
-    skip
     series = Series.new("01234")
     expected = [[0, 1, 2], [1, 2, 3], [2, 3, 4]]
     assert_equal expected, series.slices(3)
@@ -61,7 +56,7 @@ class SeriesTest < MiniTest::Unit::TestCase
     assert_equal 2, series.largest_product(2)
   end
 
-  def test_another_tiny_number
+  def test_another_tiny_numneber
     skip
     series = Series.new("19")
     assert_equal 9, series.largest_product(2)
