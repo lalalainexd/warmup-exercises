@@ -27,8 +27,14 @@ class BinaryTest < MiniTest::Unit::TestCase
     assert_equal 26, Binary.new("11010").to_decimal
   end
 
+<<<<<<< HEAD
   def test_binary_10001101000_is_decimal_1028
     assert_equal 1028, Binary.new("10001101000").to_decimal
+=======
+  def test_binary_10001101000_is_decimal_1128
+    skip
+    assert_equal 1128, Binary.new("10001101000").to_decimal
+>>>>>>> abc1285125d2af355dd0e42cdefc72640b890ab7
   end
 
   def test_invalid_binary_is_decimal_0
