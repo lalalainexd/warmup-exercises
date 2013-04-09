@@ -12,17 +12,19 @@ class CalculatorTest < MiniTest::Unit::TestCase
   end
 
   def test_add_2
-    skip
     assert_equal 3, @calculator.ask('What is 1 plus 2?')
   end
 
   def test_add_more_digits
-    skip
     assert_equal 45801, @calculator.ask('What is 123 plus 45678?')
   end
 
   def test_add_negative_numbers
-    skip
     assert_equal -11, @calculator.ask('What is -1 plus -10?')
+  end
+
+  def test_add_three_numbers
+    assert_equal 3, @calculator.ask('What is 1 plus 1 plus 1?')
+    assert_equal 19, @calculator.ask('What is 7 plus 9 plus 3?')
   end
 end

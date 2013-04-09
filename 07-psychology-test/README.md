@@ -46,8 +46,8 @@ response present them with a new question.
 
 ### Storing Questions
 
-You want to be able to share questions with other scientists to see their 
-effect in upcoming tests. Devise a way that would make it easy for you to 
+You want to be able to share questions with other scientists to see their
+effect in upcoming tests. Devise a way that would make it easy for you to
 exchange a body of questions with another scientist.
 
 ### Storing Answers
