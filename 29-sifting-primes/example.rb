@@ -6,14 +6,13 @@ class Sieve
 
   def primes
     numbers = Array(2..max)
-
     numbers.each do |n|
       numbers = remove_multiples n, numbers
     end
   end
 
-  def remove_multiples n, array
-    array.delete_if {|x| x % n == 0 && x != n }
+  def remove_multiples n, numbers
+    numbers.delete_if {|x| x % n == 0 && x != n }
   end
 
 end
