@@ -7,7 +7,7 @@ class Sieve
   def primes
     numbers = Array(2..max)
     numbers.each do |n|
-      numbers = remove_multiples n, numbers
+      remove_multiples n, numbers
     end
   end
 
